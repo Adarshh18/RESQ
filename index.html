@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Management</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="hero">
+        <nav class="navbar">
+            <img src="./images/RESQ.jpg" alt="RESQ Logo" class="logo">
+  <div>Disaster Management</div>
+ 
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sos.html">SOS</a></li>
+                <!-- <li><a href="http://127.0.0.1:5000">Qchat</a></li> -->
+                 <li><a href="Qchat.html">Qchat</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="ppj.html">Sign In</a></li>
+                
+            </ul>
+            
+        </nav>
+        <div class="updates-section">
+            <h1>Latest Updates</h1>
+            <p id="update-text">Stay informed with the latest disaster alerts and updates.</p>
+            <button class="explore-btn" ><a href="exp.html">Explore</a></button>
+        </div>
+    </div>
+    <div class="info-cards">
+        <div class="card" data-info="Flood alert in City A. Evacuation in progress.">
+            <h3>Info Update</h3>
+            <p>Stay updated with the latest disaster information and safety tips.</p>
+            <p><strong>Location:</strong> City A</p>
+            <p><strong>Status:</strong> Active</p>
+        </div>
+        <div class="card" data-info="Earthquake warning in Region B. Stay safe and follow guidelines.">
+            <h3>Stay Updated</h3>
+            <p>Receive real-time alerts and updates on disaster situations.</p>
+            <p><strong>Alert Type:</strong> Earthquake Warning</p>
+            <p><strong>Region:</strong> Region B</p>
+        </div>
+        <div class="card emergency">
+            <h3>Call for Help</h3>
+            <p>Need assistance? Contact emergency services immediately.</p>
+            <button class="help-btn" onclick="showEmergencyPopup()">Get Help Now</button>
+        </div>
+            <!-- Emergency Popup Modal -->
+    <div id="emergencyPopup" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="hideEmergencyPopup()">&times;</span>
+            <h2>Emergency Contact Information</h2>
+            <p><strong>Stay calm and provide your location when contacting services.</strong></p>
+            <ul>
+                <li><strong>National Emergency Helpline:</strong> 112</li>
+                <li><strong>Police:</strong> 100</li>
+                <li><strong>Fire Services:</strong> 101</li>
+                <li><strong>Ambulance:</strong> 108</li>
+                <li><strong>National Disaster Response Force (NDRF):</strong> +91-9711077372</li>
+                <li><strong>State Disaster Management Authority (Example):</strong> +91-11-23456000 (Delhi)</li>
+            </ul>
+            <h3>Instructions:</h3>
+            <p>
+                - Call the appropriate number based on your emergency.<br>
+                - Provide your exact location and describe the situation.<br>
+                - Follow official instructions and stay safe.<br>
+                - Use the SOS feature on this website for location sharing.
+            </p>
+            <button class="modal-close-btn" onclick="hideEmergencyPopup()">Close</button>
+        </div>
+    </div>
+
+        </div>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+</html>
