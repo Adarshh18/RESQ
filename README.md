@@ -1,347 +1,169 @@
-<div align="center">
 
-```
-██████╗ ███████╗███████╗ ██████╗
-██╔══██╗██╔════╝██╔════╝██╔═══██╗
-██████╔╝█████╗  ███████╗██║   ██║
-██╔══██╗██╔══╝  ╚════██║██║▄▄ ██║
-██║  ██║███████╗███████║╚██████╔╝
-╚═╝  ╚═╝╚══════╝╚══════╝ ╚══▀▀═╝
-```
 
-### **R**espond · **E**vacuate · **S**upport · **Q**uickly
+🚀 RESQ
 
-*A real-time disaster response and evacuation platform for civilians and volunteers across India*
+> AI-Powered Relief at the Speed of Crisis, where every second counts.
+
+
+
 
 ---
 
-![Static Frontend](https://img.shields.io/badge/Type-Static%20Frontend-e8291c?style=flat-square)
-![Leaflet.js](https://img.shields.io/badge/Maps-Leaflet.js-ff6b2b?style=flat-square)
-![Geolocation API](https://img.shields.io/badge/API-Geolocation-f5a623?style=flat-square)
-![Chatbot](https://img.shields.io/badge/QChat-REST%20API-00d4ff?style=flat-square)
-![Responsive](https://img.shields.io/badge/Design-Responsive-00d278?style=flat-square)
-![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
-![No Install](https://img.shields.io/badge/Setup-Zero%20Dependencies-blueviolet?style=flat-square)
+📌 Problem Statement
 
-</div>
+Problem Statement 9 – Weaving AI Magic with Groq — Introducing RESQ
+
 
 ---
 
-## Overview
+🎯 Objective
 
-During disasters, civilians face a critical gap — no reliable way to signal for help, locate safe zones, or connect with rescue volunteers. **RESQ** bridges that gap.
+During natural disasters, people often lack real-time, location-specific information, leading to panic, delayed evacuations, and uncoordinated rescue efforts.
+RESQ solves this by providing instant alerts, guided evacuation, and volunteer coordination, connecting users to the nearest safe zones (Quell Zones) and ensuring rapid support when every second counts.
 
-It is a **zero-install, open-in-browser** platform that works on any device, combining:
 
-- GPS-based SOS alerting
-- An interactive evacuation map pre-loaded with hospitals and shelters across all Indian state capitals
-- An AI-powered disaster chatbot
-- A volunteer coordination dashboard
+---
+Our Approach:
 
-> "Reduce chaos, misinformation, and isolation during disasters — with speed, clarity, and trust."
+Chose this problem to save lives during unpredictable crises using AI-powered systems.
+
+Key challenges: Real-time routing under dynamic disaster conditions, reliable volunteer coordination, and minimal delay communication.
+
+Breakthrough: Creation of AutoQ, a predictive routing system that dynamically adapts as disasters evolve, and Q-link, for seamless real-time volunteer interaction.
+
+
 
 ---
 
-## At a Glance
+🛠 Tech Stack
 
-| Metric | Value |
-|--------|-------|
-| State Capitals Mapped | 36+ |
-| Core Modules | 5 |
-| Dependencies to Install | 0 |
-| Build Step Required | None |
-| Target Region | India |
+Core Technologies Used:
 
----
+Frontend: React.js, Tailwind CSS, HTML/CSS
 
-## Key Features
+Backend: Flask
 
-### 🆘 One-Click SOS Dispatch
-Captures GPS coordinates via the browser Geolocation API and pins the user on the map instantly. On activation, reveals **WhatsApp**, **email**, and **emergency call** action buttons.
+Hosting: Render,GitHub
 
-### 🗺️ Interactive Quell Zone Map
-Leaflet.js map pre-loaded with **2–5 safe zone markers per state capital** across all 36 Indian capitals — hospitals, community shelters, and relief centers — all visible on page load.
 
-### 🔀 Turn-by-Turn Routing
-Leaflet Routing Machine draws highlighted yellow routes from the user's current GPS position to any searched location or clicked Quell Zone marker.
+Sponsor Technologies Used:
 
-### 💬 QChat Disaster Chatbot
-Sends user queries to a deployed REST backend and renders responses live. Supports platform navigation actions — users can be redirected to the SOS page or homepage directly from chat responses.
+✅ Groq: Used for instant user query resolution to deliver fast, AI-powered emergency guidance.
 
-### 📡 Live Location Tracking
-Polls the Geolocation API every **5 seconds** to continuously update the user's marker and map view during an active emergency session.
 
-### 🙋 Volunteer Dashboard
-Post-login dashboard with task tracker, event calendar, leaderboard, achievement badges, and a **Chart.js doughnut** breakdown of service hours by activity category.
-
-### 🏥 Health Profile on Registration
-Two-step signup: standard credentials followed by an optional health form capturing **allergies**, **chronic conditions**, and **medications** — relevant for triage during rescue operations.
-
-### 💸 Donation Portal
-Direct **UPI** and **PayPal** donation links on the Services page to fund emergency supplies and relief operations.
-
-### 📞 Emergency Contact Modal
-Homepage modal displaying all India emergency numbers at a glance.
-
-| Service | Number |
-|---------|--------|
-| National Emergency | 112 |
-| Police | 100 |
-| Fire Services | 101 |
-| Ambulance | 108 |
-| NDRF Hotline | +91-9711077372 |
 
 ---
 
-## System Workflow
+✨ Key Features
 
-```
-┌─────────────┐     ┌──────────────────┐     ┌──────────────────────┐
-│   Homepage  │────▶│   SOS Hub        │────▶│  GPS Capture         │
-│  index.html │     │   sos.html       │     │  Geolocation API     │
-└─────────────┘     └──────────────────┘     └──────────┬───────────┘
-                                                         │
-                    ┌──────────────────┐     ┌──────────▼───────────┐
-                    │  Share Location  │◀────│  Map Pin + Routing   │
-                    │  WhatsApp/Email  │     │  Leaflet.js + OSRM   │
-                    └──────────────────┘     └──────────────────────┘
+✅ Immediate SOS Alerts: Sends emergency signals to nearby police stations and volunteers.
 
-┌─────────────┐     ┌──────────────────┐     ┌──────────────────────┐
-│   QChat     │────▶│  REST Backend    │────▶│  JSON Response       │
-│ Qchat.html  │     │  Render Hosted   │     │  { "response": "" }  │
-└─────────────┘     └──────────────────┘     └──────────────────────┘
+✅ AutoQ (Predictive Routing): Detects user location and dynamically guides them to the nearest Quell Zone based on evolving threats.
 
-┌─────────────┐     ┌──────────────────┐     ┌──────────────────────┐
-│  Services   │────▶│  Volunteer Reg.  │────▶│  Dashboard           │
-│ service.html│     │  Health Profile  │     │  volunteer.html      │
-└─────────────┘     └──────────────────┘     └──────────────────────┘
-```
+✅ Quell Zones: Identifies relatively safe locations during disasters.
 
-**Step-by-step flow:**
+✅ Q-link Communication: Seamless communication between users, volunteers, and disaster centers.
 
-1. **Homepage** — User views disaster alert cards and accesses the emergency contact modal (112, NDRF, etc.)
-2. **SOS Trigger** — Pressing SOS plays a siren, captures GPS, drops a map pin, and reveals sharing options
-3. **Quell Zones** — All 36 state capital safe zones pre-load on the map; clicking any opens a directions popup
-4. **Search & Route** — Nominatim geocodes any location; Leaflet Routing Machine draws the route
-5. **QChat** — User message → GET request to Render API → response rendered in chat window
-6. **Volunteer Flow** — Register → complete health profile → log in → access full dashboard
+✅ Q Badge System: Recognizes and rewards volunteers for their rescue efforts to boost engagement.
+
+
+(Snapshots available in MVP links.)
+
 
 ---
 
-## Tech Stack
+🛽 Deliverables
 
-### Frontend
-| Technology | Purpose |
-|------------|---------|
-| HTML5 / CSS3 | Structure and styling |
-| Vanilla JavaScript (ES6+) | All interactivity and logic |
-| Google Fonts — Poppins | Typography |
-| Font Awesome 6 | Icons throughout the platform |
-| Boxicons 2.1.4 | Icons on login/register page |
 
-### Mapping & Routing
-| Technology | Purpose |
-|------------|---------|
-| Leaflet.js | Interactive map rendering |
-| Leaflet Routing Machine | Turn-by-turn route display |
-| OpenStreetMap Tiles | Base map layer |
-| Nominatim API | Location geocoding and search |
 
-### Data & Visualization
-| Technology | Purpose |
-|------------|---------|
-| Chart.js | Doughnut chart on volunteer dashboard |
+MVP (Working Prototype):
 
-### APIs & Integrations
-| Integration | Purpose |
-|-------------|---------|
-| Browser Geolocation API | GPS coordinate capture |
-| WhatsApp URL Scheme (`wa.me`) | Emergency location sharing |
-| `mailto:` URI | Email-based SOS sharing |
-| UPI Deep Link | Donation gateway |
-| PayPal Donate URL | International donations |
+Live MVP: https://divyansh1610.github.io/RESQ/
 
-### Backend
-| Component | Detail |
-|-----------|--------|
-| REST API | Deployed on Render |
-| Endpoint | `GET /get?msg=<query>` |
-| Response | `{ "response": "string" }` |
+GitHub Repository: https://github.com/DIVYANSH1610/RESQ
+
+
+
 
 ---
 
-## Project Structure
+✅ Tasks & Bonus Checklist
 
-```
-RESQ-main/
-├── index.html          # Homepage — alert cards, emergency contact modal
-├── sos.html            # SOS Hub — map, Quell Zones, routing, live tracking
-├── Qchat.html          # QChat — chatbot UI + REST API integration
-├── service.html        # Services — mission, donations, volunteer registration
-├── volunteer.html      # Volunteer dashboard — tasks, events, Chart.js, badges
-├── ppj.html            # Login / Register + health profile step
-├── exp.html            # About / Explore page
-│
-├── css/
-│   ├── index.css       # Homepage styles
-│   ├── ppj.css         # Login/register styles
-│   └── volunteer.css   # Dashboard styles
-│
-├── js/
-│   ├── index.js        # Homepage interactions
-│   └── ppj.js          # Login/register toggle logic
-│
-└── images/
-    ├── RESQ.jpg        # Platform logo
-    ├── chatbotbg.jpg   # QChat background
-    ├── explore.jpg     # Explore page background
-    └── icon.jpg        # Volunteer dashboard user avatar
-```
+✅ All members of the team completed the mandatory task.
 
-> **Notable:** `sos.html` is the most complex module at ~695 lines, containing all Quell Zone data for every Indian state capital, SOS trigger logic, routing, live tracking, and location sharing.
+✅ Bonus Task 1 completed (Sharing of Badges).
+
+✅ Bonus Task 2 completed (Signed up for Sprint.dev).
+
+
 
 ---
 
-## Installation & Setup
+🧪 How to Run the Project
 
-### Prerequisites
-- Any modern browser (Chrome, Firefox, Edge, Safari)
-- A local HTTP server — choose any option below
-- Git
+Requirements:
 
-### Quick Start
+Node.js
 
-```bash
-# 1. Clone the repository
-git clone https://github.com/<your-username>/RESQ.git
+API Keys for Google Maps
+
+Firebase Project Setup (Auth, Database, Cloud Messaging)
+
+
+Local Setup:
+
+# Clone the repo
+git clone https://github.com/DIVYANSH1610/RESQ
+
+# Install dependencies
 cd RESQ
+npm install
 
-# 2a. Serve with Python 3
-python -m http.server 8080
+# Start development server
+npm run dev
 
-# 2b. OR serve with Node.js
-npm install -g http-server
-http-server -p 8080
+(Ensure environment variables like Firebase credentials and API keys are properly configured.)
 
-# 3. Open in browser
-open http://localhost:8080
-```
-
-> **VS Code users:** Right-click `index.html` → *Open with Live Server*
-
-### Configuration Notes
-
-**Chatbot Backend**
-The QChat module connects to a pre-deployed API. To use your own backend, update the fetch URL in `Qchat.html`:
-```javascript
-// Replace this:
-const response = await fetch(`https://resq-ziw9.onrender.com/get?msg=${encodeURIComponent(message)}`);
-
-// With your own endpoint:
-const response = await fetch(`https://your-backend-url/get?msg=${encodeURIComponent(message)}`);
-```
-Expected response shape: `{ "response": "<string>" }`
-
-**Geolocation**
-Requires HTTPS in production. Works over HTTP locally with a browser permission prompt.
-
-**Donation Links**
-Replace placeholder credentials in `service.html` before deploying:
-- UPI: `donate@upi` → your UPI ID
-- PayPal: `your-paypal-email` → your PayPal email
-
-**Routing**
-Uses the default OSRM demo server. For production, configure a self-hosted OSRM instance to avoid rate limits.
 
 ---
 
-## Usage
+🦮 Future Scope
 
-### For Civilians
+📈 Integration with government-run disaster systems and NGOs.
 
-1. Open the app and navigate to the **SOS** page
-2. Allow location access when prompted
-3. Click **Send SOS** to capture your position and reveal sharing options
-4. Use **Share via WhatsApp** or **Share via Email** to send your GPS link to a contact
-5. Browse **Quell Zone markers** on the map → click → **Get Directions** for a route to safety
-6. Use the **Search bar** to route to any location by name
+🛡 Advanced AI threat prediction based on satellite and sensor data.
 
-### For Volunteers
+🌐 Localization in regional languages for broader accessibility.
 
-1. Go to **Services** → click **Become a Volunteer**
-2. Complete the registration form with personal and health details
-3. On return visits, click **Already a Volunteer?** → log in → access the dashboard
-4. Dashboard provides task status, event RSVPs, leaderboard rankings, and downloadable reports
+🚁 Offline maps and mesh networking for communication without internet.
 
-### For New Users
 
-1. Click **Sign In** in the navigation bar
-2. Select **Register** → fill in credentials → submit
-3. Complete the optional health information form (allergies, chronic conditions, medications)
 
 ---
 
-## Screenshots / Demo
+📌 Resources / Credits
 
-> Add screenshots by placing images in the `images/` folder and updating the paths below.
+Google Maps API for geolocation and routing.
 
-| Module | Preview |
-|--------|---------|
-| Homepage | `![Homepage](images/screenshot-home.png)` |
-| SOS Hub | `![SOS Hub](images/screenshot-sos.png)` |
-| QChat | `![QChat](images/screenshot-chat.png)` |
-| Services | `![Services](images/screenshot-services.png)` |
-| Volunteer Dashboard | `![Dashboard](images/screenshot-dashboard.png)` |
+Firebase for authentication, database, and messaging.
 
----
+Groq API for AI-based user query resolution.
 
-## Future Enhancements
+Tailwind CSS for fast, responsive front-end design.
 
-| # | Feature | Description |
-|---|---------|-------------|
-| 01 | **Persistent Backend & Database** | Replace client-only forms with Firebase or PostgreSQL to persist accounts, health profiles, and volunteer records |
-| 02 | **Live Weather Integration** | Connect the SOS Hub weather panel to OpenWeatherMap API using captured GPS coordinates |
-| 03 | **Admin Operations Dashboard** | Coordinator panel for NDRF/SDMA operators to monitor active SOS pins and assign volunteers in real time |
-| 04 | **Web Push Notifications** | Deliver real-time disaster alerts via the Web Push API based on the user's stored region |
-| 05 | **Offline Support via Service Workers** | Cache critical pages (SOS, emergency contacts) for access when network connectivity fails during disasters |
-| 06 | **Role-Based Access Control** | Differentiate civilian, volunteer, and admin roles with protected routes and permission-based features |
-| 07 | **Multilingual Interface** | Localization for Hindi, Tamil, Telugu, and Bengali to improve accessibility during emergencies |
-| 08 | **Verified Donation Tracking** | Integrate Razorpay or Stripe with a transparent fund allocation dashboard visible to donors |
+
+Special thanks to hackathon organizers and supporting teams for inspiration and mentorship!
+
 
 ---
 
-## License
+🏁 Final Words
 
-```
-MIT License
+Our journey with RESQ was about building something that can literally save lives.
+From brainstorming real-world use cases to building a live MVP within hackathon deadlines, we faced and conquered numerous challenges.
+We learned a lot about real-time systems, predictive routing, and team collaboration under pressure.
 
-Copyright (c) 2025 RESQ
+#ByteRunners for the win!
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-```
 
 ---
-
-<div align="center">
-
-**RESQ** · Respond · Evacuate · Support · Quickly
-
-*© 2025 RESQ — All Rights Reserved*
-
-</div>
